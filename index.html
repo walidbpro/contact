@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact – Freelance.com</title>
+
+  <style>
+    :root{
+      --blue-dark:#0b2545;
+      --blue:#0a2f6b;
+      --blue-light:#eef4fb;
+      --primary:#0b5cff;
+      --green:#12c29c;
+      --text:#0b1f33;
+      --muted:#6b7c93;
+      --border:#e2e8f0;
+      --radius:8px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:#fff;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 32px;
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+
+    .logo{
+      font-weight:900;
+      font-size:20px;
+      line-height:1;
+    }
+
+    .logo span{
+      color:var(--primary);
+    }
+
+    .search{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .search input{
+      padding:10px 14px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:var(--blue-light);
+      font-size:14px;
+      min-width:180px;
+    }
+
+    .search button{
+      background:var(--primary);
+      border:none;
+      color:#fff;
+      padding:10px 14px;
+      border-radius:50%;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .btn-inscription{
+      background:var(--green);
+      color:#fff !important;
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:700;
+    }
+
+    /* ================= PAGE LAYOUT ================= */
+    .page{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      min-height:calc(100vh - 72px);
+    }
+
+    @media (max-width: 1000px){
+      .page{grid-template-columns:1fr}
+      .side{display:none}
+      .search{display:none}
+    }
+
+    /* ================= LEFT ================= */
+    .main{
+      padding:48px 56px;
+      max-width:900px;
+    }
+
+    h1{
+      margin:0 0 32px;
+      font-size:36px;
+      font-weight:800;
+    }
+
+    form{
+      display:grid;
+      gap:20px;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    @media (max-width:640px){
+      .row{grid-template-columns:1fr}
+    }
+
+    label{
+      display:block;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:6px;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:14px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:var(--blue-light);
+      font-size:14px;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:#7aa6e6;
+      font-style:italic;
+    }
+
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .phone{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .phone select{
+      width:72px;
+    }
+
+    .hint{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.4;
+    }
+
+    .actions{
+      display:flex;
+      justify-content:flex-end;
+      margin-top:12px;
+    }
+
+    .btn{
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      border-radius:999px;
+      padding:12px 22px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    /* ================= RIGHT ================= */
+    .side{
+      background:linear-gradient(180deg,#0b2545,#071a34);
+      color:#fff;
+      padding:64px 56px;
+    }
+
+    .side h2{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:800;
+    }
+
+    .side a{
+      color:var(--green);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .block{
+      margin-bottom:40px;
+    }
+
+    .email{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:18px;
+      font-weight:700;
+      color:var(--green);
+    }
+
+    .email span{
+      font-size:28px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="logo">
+      free<br><span>lance</span>.com
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="UX Designer">
+      <input type="text" placeholder="Paris">
+      <button>🔍</button>
+    </div>
+
+    <nav class="menu">
+      <a href="#">FREELANCE</a>
+      <a href="#">ENTREPRISES</a>
+      <a href="#">CONNEXION</a>
+      <a href="#" class="btn-inscription">INSCRIPTION</a>
+      <a href="#">FR</a>
+    </nav>
+  </header>
+
+  <!-- ================= PAGE ================= -->
+  <div class="page">
+
+    <!-- LEFT FORM -->
+    <main class="main">
+      <h1>Comment peut-on vous aider&nbsp;?</h1>
+
+      <form>
+        <div class="row">
+          <div>
+            <label>Nom de famille</label>
+            <input type="text" placeholder="Indiquez votre nom de famille">
+          </div>
+          <div>
+            <label>Prénom</label>
+            <input type="text" placeholder="Indiquez votre prénom">
+          </div>
+        </div>
+
+        <div>
+          <label>Adresse email</label>
+          <input type="email" placeholder="Indiquez votre adresse email">
+        </div>
+
+        <div>
+          <label>Numéro de téléphone</label>
+          <div class="phone">
+            <select>
+              <option>🇫🇷</option>
+            </select>
+            <input type="tel" placeholder="06 12 34 56 78">
+          </div>
+        </div>
+
+        <div>
+          <label>Êtes-vous freelance ou client&nbsp;?</label>
+          <select>
+            <option>Freelance | Client</option>
+            <option>Freelance</option>
+            <option>Client</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Motif</label>
+          <select>
+            <option>Problème technique</option>
+            <option>Utilisation de la Plateforme</option>
+            <option>Suggestion / évolution</option>
+            <option>Facturation / Paiement</option>
+            <option>Compte & données personnelles</option>
+            <option>Juridique / Signalement</option>
+            <option>Opportunités / Sourcing</option>
+            <option>Commercial / Portage</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Votre message</label>
+          <textarea placeholder="Détaillez-nous comment nous pouvons vous aider"></textarea>
+        </div>
+
+        <p class="hint">
+          FREELANCE.COM traite vos données afin de répondre à votre demande de contact.
+          <a href="#">Politique de confidentialité</a>
+        </p>
+
+        <div class="actions">
+          <button class="btn">ENVOYER</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- RIGHT PANEL -->
+    <aside class="side">
+      <div class="block">
+        <h2>Besoin d’aide&nbsp;?</h2>
+        <a href="#">Consulter la FAQ</a>
+      </div>
+
+  
+
+      <div class="block">
+        <h2>Demandes presse</h2>
+        <a href="#">Consulter notre page presse</a>
+      </div>
+    </aside>
+
+  </div>
+
+</body>
+</html>
